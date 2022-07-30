@@ -99,10 +99,9 @@ console.log('%c%s', styleHeader,
 `- У змінній day дано якесь число від 1 до 31. Потрібно визначити, у яку
   половину(декаду) місяця потрапляє це число (у першу, другу чи третю).`);
 
-s = prompt('Вкажіть значення хвилин (1-31)');
-let day = +s;
+let day = +prompt('Вкажіть значення хвилин (1-31)');
 
-if(s === '' || s === null || (isNaN(day)/* day !== day */)) {
+if(!day) {
     day = Math.round(1 + Math.random() * 30);
     console.log('Задане випадкове значення: %c%s', styleNumber, day);
 } else {
