@@ -36,7 +36,7 @@ console.log('%c%s', styleHeader,
 
 let res, s, x;
 
-s = prompt('Вкажіть число для перевірки на рівність з 0');
+s = prompt('Вкажіть число для перевірки на нерівність з 0');
 x = +s;
 
 if(s === '' || s === null || (isNaN(x)/* x !== x */)) {
@@ -165,7 +165,8 @@ switch (day) {
 if(res) {
     console.log('Результат: %c\'%s\'', styleString, res);
 } else {
-    console.log('Результат: %cНевірно заданий порядковий номер дня тижня', styleString, day);
+    console.log('Результат: %cНевірно заданий порядковий номер дня тижня %c%s',
+        styleString, styleNumber, day);
 }
 
 /*******************************************************/
