@@ -185,13 +185,11 @@ if(isNaN(number1)/* number1 !== number1 */) {
     console.log('Результат: %cневірно введене число №1', styleString);
 } else if (isNaN(number2)/* number2 !== number2 */) {
     console.log('Результат: %cневірно введене число №2', styleString);
+} else if(number1 === number2) {
+    console.log('Результат: %cвведені рівні числа', styleString);
 } else {
-    if(number1 === number2) {
-        console.log('Результат: %cвведені рівні числа', styleString);
-    } else {
-        res = (number1 > number2) ? number1 : number2;
-        console.log('Результат: максимальне число %c%s', styleNumber, res);
-    }
+    res = (number1 > number2) ? number1 : number2;
+    console.log('Результат: максимальне число %c%s', styleNumber, res);
 }
 
 /*******************************************************/
