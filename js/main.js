@@ -204,6 +204,66 @@ x = x || 1;
 console.log('%c0%c || %c1%c -> %c%s',
     styleNumber, styleNone, styleNumber, styleNone, styleNumber, x);
 
+x = -0;
+x = x || -1;
+console.log('%c-0%c || %c-1%c -> %c%s',
+    styleNumber, styleNone, styleNumber, styleNone, styleNumber, x);
+
+x = 0.0;
+x = x || 2.0;
+console.log('%c0.0%c || %c2.0%c -> %c%s',
+    styleNumber, styleNone, styleNumber, styleNone, styleNumber, x);
+
+x = -0.0;
+x = x || -2.0;
+console.log('%c-0.0%c || %c-2.0%c -> %c%s',
+    styleNumber, styleNone, styleNumber, styleNone, styleNumber, x);
+
+x = 0n;
+x = x || 3n;
+console.log('%c0n%c || %c3n%c -> %c%s',
+    styleNumber, styleNone, styleNumber, styleNone, styleNumber, x);
+
+x = -0n;
+x = x || -3n;
+console.log('%c-0n%c || %c-3n%c -> %c%s',
+    styleNumber, styleNone, styleNumber, styleNone, styleNumber, x);
+
+x = 0b0;
+x = x || 0b1;
+console.log('%c0b0%c || %c0b1%c -> %c%s',
+    styleNumber, styleNone, styleNumber, styleNone, styleNumber, x);
+
+x = -0b0;
+x = x || -0b1;
+console.log('%c-0b0%c || %c-0b1%c -> %c%s',
+    styleNumber, styleNone, styleNumber, styleNone, styleNumber, x);
+
+x = 0o0;
+x = x || 0o4;
+console.log('%c0o0%c || %c0o4%c -> %c%s',
+    styleNumber, styleNone, styleNumber, styleNone, styleNumber, x);
+
+x = -0o0;
+x = x || -0o4;
+console.log('%c-0o0%c || %c-0o4%c -> %c%s',
+    styleNumber, styleNone, styleNumber, styleNone, styleNumber, x);
+
+x = 0x0;
+x = x || 0x5;
+console.log('%c0x0%c || %c0x5%c -> %c%s',
+    styleNumber, styleNone, styleNumber, styleNone, styleNumber, x);
+
+x = -0x0;
+x = x || -0x5;
+console.log('%c-0x0%c || %c0x5%c -> %c%s',
+    styleNumber, styleNone, styleNumber, styleNone, styleNumber, x);
+
+x = NaN;
+x = x || 6;
+console.log('%cNaN%c || %c6%c -> %c%s',
+    styleString, styleNone, styleNumber, styleNone, styleNumber, x);
+
 x = false;
 x = x || true;
 console.log('%cfalse%c || %ctrue%c -> %c%s',
@@ -214,6 +274,16 @@ x = x || '<default>';
 console.log('%c\'\'%c || %c\'<default>\'%c -> %c\'%s\'',
     styleString, styleNone, styleString, styleNone, styleString, x);
 
+x = "";
+x = x || "<default>";
+console.log('%c""%c || %c"<default>"%c -> %c"%s"',
+    styleString, styleNone, styleString, styleNone, styleString, x);
+
+x = ``;
+x = x || `<default>`;
+console.log('%c``%c || %c`<default>`%c -> %c`%s`',
+    styleString, styleNone, styleString, styleNone, styleString, x);
+
 x = undefined;
 x = x || {name: "object"};
 console.log('%cundefined%c || {name: %c"object"%c} -> %o',
@@ -222,3 +292,4 @@ console.log('%cundefined%c || {name: %c"object"%c} -> %o',
 x = null;
 x = x || [];
 console.log('%cnull%c || [] -> %o', styleString, styleNone, x);
+
