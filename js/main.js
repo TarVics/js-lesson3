@@ -39,7 +39,7 @@ let res, s, x;
 s = prompt('Вкажіть число для перевірки на нерівність з 0');
 x = +s;
 
-if(s === '' || s === null || (isNaN(x)/* x !== x */)) {
+if(!s || isNaN(x)/* x !== x */) {
     x = Math.round(Math.random() * 6) - 3;
     console.log('Задане випадкове число: %c%s', styleNumber, x);
 } else {
@@ -59,7 +59,6 @@ console.log('Варіант 2. Результат: %c\'%s\'', styleString, res);
 const arrAnswer = ['Невірно', 'Вірно'];
 res = arrAnswer[+!!x];
 console.log('Варіант 3. Результат: %c\'%s\'', styleString, res);
-
 /*******************************************************/
 
 console.log('%c%s', styleHeader,
@@ -70,7 +69,7 @@ console.log('%c%s', styleHeader,
 s = prompt('Вкажіть значення хвилин (0-59)');
 let time = +s;
 
-if(s === '' || s === null || (isNaN(time)/* time !== time */)) {
+if(!s || isNaN(time)/* time !== time */) {
     time = Math.round(Math.random() * 59);
     console.log('Задане випадкове значення: %c%s', styleNumber, time);
 } else {
@@ -204,59 +203,9 @@ x = x || 1;
 console.log('%c0%c || %c1%c -> %c%s',
     styleNumber, styleNone, styleNumber, styleNone, styleNumber, x);
 
-x = -0;
-x = x || -1;
-console.log('%c-0%c || %c-1%c -> %c%s',
-    styleNumber, styleNone, styleNumber, styleNone, styleNumber, x);
-
-x = 0.0;
-x = x || 2.0;
-console.log('%c0.0%c || %c2.0%c -> %c%s',
-    styleNumber, styleNone, styleNumber, styleNone, styleNumber, x);
-
-x = -0.0;
-x = x || -2.0;
-console.log('%c-0.0%c || %c-2.0%c -> %c%s',
-    styleNumber, styleNone, styleNumber, styleNone, styleNumber, x);
-
 x = 0n;
 x = x || 3n;
 console.log('%c0n%c || %c3n%c -> %c%s',
-    styleNumber, styleNone, styleNumber, styleNone, styleNumber, x);
-
-x = -0n;
-x = x || -3n;
-console.log('%c-0n%c || %c-3n%c -> %c%s',
-    styleNumber, styleNone, styleNumber, styleNone, styleNumber, x);
-
-x = 0b0;
-x = x || 0b1;
-console.log('%c0b0%c || %c0b1%c -> %c%s',
-    styleNumber, styleNone, styleNumber, styleNone, styleNumber, x);
-
-x = -0b0;
-x = x || -0b1;
-console.log('%c-0b0%c || %c-0b1%c -> %c%s',
-    styleNumber, styleNone, styleNumber, styleNone, styleNumber, x);
-
-x = 0o0;
-x = x || 0o4;
-console.log('%c0o0%c || %c0o4%c -> %c%s',
-    styleNumber, styleNone, styleNumber, styleNone, styleNumber, x);
-
-x = -0o0;
-x = x || -0o4;
-console.log('%c-0o0%c || %c-0o4%c -> %c%s',
-    styleNumber, styleNone, styleNumber, styleNone, styleNumber, x);
-
-x = 0x0;
-x = x || 0x5;
-console.log('%c0x0%c || %c0x5%c -> %c%s',
-    styleNumber, styleNone, styleNumber, styleNone, styleNumber, x);
-
-x = -0x0;
-x = x || -0x5;
-console.log('%c-0x0%c || %c0x5%c -> %c%s',
     styleNumber, styleNone, styleNumber, styleNone, styleNumber, x);
 
 x = NaN;
@@ -272,16 +221,6 @@ console.log('%cfalse%c || %ctrue%c -> %c%s',
 x = '';
 x = x || '<default>';
 console.log('%c\'\'%c || %c\'<default>\'%c -> %c\'%s\'',
-    styleString, styleNone, styleString, styleNone, styleString, x);
-
-x = "";
-x = x || "<default>";
-console.log('%c""%c || %c"<default>"%c -> %c"%s"',
-    styleString, styleNone, styleString, styleNone, styleString, x);
-
-x = ``;
-x = x || `<default>`;
-console.log('%c``%c || %c`<default>`%c -> %c`%s`',
     styleString, styleNone, styleString, styleNone, styleString, x);
 
 x = undefined;
