@@ -73,6 +73,7 @@ if(!s || isNaN(time)/* time !== time */) {
     time = Math.round(Math.random() * 59);
     console.log('Задане випадкове значення: %c%s', styleNumber, time);
 } else {
+    time = Math.trunc(time);
     console.log('Задане значення: %c%s', styleNumber, time);
 }
 //------------------------------------------------------
@@ -104,6 +105,7 @@ if(!day) {
     day = Math.round(1 + Math.random() * 30);
     console.log('Задане випадкове значення: %c%s', styleNumber, day);
 } else {
+    day = Math.trunc(day);
     console.log('Задане значення: %c%s', styleNumber, day);
 }
 //------------------------------------------------------
